@@ -1,10 +1,7 @@
-import { useState } from "react";
-
-const Name = () => {
-  const [fullName, setFullName] = useState("");
+const Name = ({ name }) => {
   return (
     <div>
-      <h2>{fullName}</h2>
+      <h2>{name}</h2>
     </div>
   );
 };

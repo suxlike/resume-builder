@@ -1,9 +1,14 @@
 import Name from "./Name";
+import SetName from "./SetName";
+import { useState } from "react";
 
 function App() {
+  const [name, setName] = useState(``);
+
   return (
     <div className="App">
-      <Name />
+      <SetName setName={setName} />
+      <Name name={name} />
     </div>
   );
 }
