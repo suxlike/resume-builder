@@ -1,8 +1,17 @@
 import { useState } from "react";
-import { Card, Divider, Grid, makeStyles, Typography } from "@material-ui/core";
+import {
+  Button,
+  Card,
+  Divider,
+  Grid,
+  makeStyles,
+  Typography,
+} from "@material-ui/core";
 import SetWork from "./SetWork";
 import SetEdu from "./SetEdu";
 import SetInfo from "./SetInfo";
+import AddBoxIcon from "@material-ui/icons/AddBox";
+import { v4 as uuidv4 } from "uuid";
 const useStyles = makeStyles({
   App: {
     margin: 20,
@@ -35,11 +44,12 @@ function App() {
   ]);
   const [work, setWork] = useState([
     {
-      company: "asd",
-      position: "asd",
-      startDate: "2015",
-      endDate: "2016",
-      description: "description",
+      id: uuidv4(),
+      company: "",
+      position: "",
+      startDate: "",
+      endDate: "",
+      description: "",
     },
   ]);
 
@@ -60,6 +70,27 @@ function App() {
             <SetInfo setInfos={setInfos} infos={infos} />
             <Divider variant="middle" />
             <SetWork work={work} setWork={setWork} />
+            <Button
+              onClick={() => {
+                setWork([
+                  ...work,
+                  {
+                    id: uuidv4(),
+                    company: "",
+                    position: "",
+                    startDate: "",
+                    endDate: "",
+                    description: "",
+                  },
+                ]);
+              }}
+              color="primary"
+              variant="contained"
+              size="small"
+            >
+              add another work experience
+              <AddBoxIcon />
+            </Button>
             <Divider variant="middle" />
             <SetEdu edu={edu} setEdu={setEdu} />
           </Card>
