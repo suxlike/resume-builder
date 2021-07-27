@@ -35,11 +35,12 @@ function App() {
   ]);
   const [edu, setEdu] = useState([
     {
-      course: "asd",
-      university: "asd",
-      startDate: "2015",
-      endDate: "2016",
-      description: "description",
+      id: uuidv4(),
+      course: "",
+      university: "",
+      startDate: "",
+      endDate: "",
+      description: "",
     },
   ]);
   const [work, setWork] = useState([
@@ -93,6 +94,27 @@ function App() {
             </Button>
             <Divider variant="middle" />
             <SetEdu edu={edu} setEdu={setEdu} />
+            <Button
+              onClick={() => {
+                setEdu([
+                  ...edu,
+                  {
+                    id: uuidv4(),
+                    company: "",
+                    position: "",
+                    startDate: "",
+                    endDate: "",
+                    description: "",
+                  },
+                ]);
+              }}
+              color="primary"
+              variant="contained"
+              size="small"
+            >
+              add another education 
+              <AddBoxIcon />
+            </Button>
           </Card>
         </Grid>
         <Grid item md={6}>

@@ -1,4 +1,4 @@
-import { Button, Grid, TextField } from "@material-ui/core";
+import { Button, Divider, Grid, TextField } from "@material-ui/core";
 import DeleteIcon from "@material-ui/icons/Delete";
 const SetWork = ({ work, setWork }) => {
   return work.map((w, i) => (
@@ -85,6 +85,7 @@ const SetWork = ({ work, setWork }) => {
           remove
           <DeleteIcon />
         </Button>
+        <Divider variant="middle" />
       </Grid>
     </Grid>
   ));

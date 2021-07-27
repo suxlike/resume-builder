@@ -1,8 +1,9 @@
-import { Grid, TextField } from "@material-ui/core";
+import { Button, Divider, Grid, TextField } from "@material-ui/core";
+import DeleteIcon from "@material-ui/icons/Delete";
 
 const SetEdu = ({ edu, setEdu }) => {
   return edu.map((e, i) => (
-    <Grid container spacing={0} key={i}>
+    <Grid container spacing={0} key={e.id}>
       <Grid item md={6} sm={6} xs={6}>
         <TextField
           fullWidth
@@ -73,6 +74,18 @@ const SetEdu = ({ edu, setEdu }) => {
           }}
         />
       </Grid>
+      <Button
+        onClick={() => {
+          setEdu(edu.filter((a) => a.id !== e.id));
+        }}
+        color="primary"
+        variant="contained"
+        size="small"
+      >
+        remove
+        <DeleteIcon />
+      </Button>
+      <Divider variant="middle" />
     </Grid>
   ));
 };
