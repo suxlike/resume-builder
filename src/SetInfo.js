@@ -1,16 +1,12 @@
 import { Grid, TextField } from "@material-ui/core";
 
 const SetInfo = ({ setInfos, infos }) => {
-  //   setInfos([...infos, { email: e.target.value }])
-  const a = (e) => {
-    let i = [...infos];
-    i[2] = { email: e.target.value };
-    setInfos(i);
-  };
   return (
     <Grid container spacing={1}>
       <Grid item md={6} sm={6} xs={6}>
         <TextField
+          color="secondary"
+          value={infos[0].fullName}
           fullWidth
           size="small"
           id="outlined-basic"
@@ -26,6 +22,8 @@ const SetInfo = ({ setInfos, infos }) => {
       </Grid>
       <Grid item md={6} sm={6} xs={6}>
         <TextField
+          color="secondary"
+          value={infos[1].title}
           fullWidth
           size="small"
           id="outlined-basic"
@@ -39,8 +37,10 @@ const SetInfo = ({ setInfos, infos }) => {
           }}
         />
       </Grid>
-      <Grid item md={4} sm={4} xs={4}>
+      <Grid item xs={3}>
         <TextField
+          color="secondary"
+          value={infos[2].email}
           fullWidth
           size="small"
           id="outlined-basic"
@@ -54,8 +54,10 @@ const SetInfo = ({ setInfos, infos }) => {
           }}
         />
       </Grid>
-      <Grid item md={4} sm={4} xs={4}>
+      <Grid item xs={3}>
         <TextField
+          color="secondary"
+          value={infos[3].github}
           fullWidth
           size="small"
           margin="normal"
@@ -69,8 +71,10 @@ const SetInfo = ({ setInfos, infos }) => {
           }}
         />
       </Grid>
-      <Grid item md={4} sm={4} xs={4}>
+      <Grid item xs={3}>
         <TextField
+          color="secondary"
+          value={infos[4].linkedin}
           fullWidth
           size="small"
           margin="normal"
@@ -80,6 +84,23 @@ const SetInfo = ({ setInfos, infos }) => {
           onChange={(e) => {
             let i = [...infos];
             i[4] = { linkedin: e.target.value };
+            setInfos(i);
+          }}
+        />
+      </Grid>
+      <Grid item xs={3}>
+        <TextField
+          color="secondary"
+          value={infos[5].location}
+          fullWidth
+          size="small"
+          margin="normal"
+          id="outlined-basic"
+          label="Location"
+          variant="outlined"
+          onChange={(e) => {
+            let i = [...infos];
+            i[5] = { location: e.target.value };
             setInfos(i);
           }}
         />

@@ -1,4 +1,4 @@
-import { Button, Divider, Grid, TextField } from "@material-ui/core";
+import { Button, Grid, TextField } from "@material-ui/core";
 import DeleteIcon from "@material-ui/icons/Delete";
 const SetWork = ({ work, setWork }) => {
   return work.map((w, i) => (
@@ -6,6 +6,7 @@ const SetWork = ({ work, setWork }) => {
       <Grid item md={6} sm={6} xs={6}>
         <TextField
           fullWidth
+          value={w.company}
           size="small"
           id="outlined-basic"
           label="Company"
@@ -14,12 +15,14 @@ const SetWork = ({ work, setWork }) => {
           onChange={(e) => {
             let a = [...work];
             a[i].company = e.target.value;
+            setWork(a);
           }}
         />
       </Grid>
       <Grid item md={6} sm={6} xs={6}>
         <TextField
           fullWidth
+          value={w.position}
           size="small"
           id="outlined-basic"
           label="Position"
@@ -28,11 +31,13 @@ const SetWork = ({ work, setWork }) => {
           onChange={(e) => {
             let a = [...work];
             a[i].position = e.target.value;
+            setWork(a);
           }}
         />
       </Grid>
       <Grid item md={6} sm={6} xs={6}>
         <TextField
+          value={w.startDate}
           fullWidth
           size="small"
           id="outlined-basic"
@@ -42,12 +47,14 @@ const SetWork = ({ work, setWork }) => {
           onChange={(e) => {
             let a = [...work];
             a[i].startDate = e.target.value;
+            setWork(a);
           }}
         />
       </Grid>
       <Grid item md={6} sm={6} xs={6}>
         <TextField
           fullWidth
+          value={w.endDate}
           size="small"
           id="outlined-basic"
           label="End Date"
@@ -56,11 +63,13 @@ const SetWork = ({ work, setWork }) => {
           onChange={(e) => {
             let a = [...work];
             a[i].endDate = e.target.value;
+            setWork(a);
           }}
         />
       </Grid>
       <Grid item md={12} sm={12} xs={12}>
         <TextField
+          value={w.description}
           fullWidth
           multiline
           id="outlined-basic"
@@ -70,22 +79,22 @@ const SetWork = ({ work, setWork }) => {
           onChange={(e) => {
             let a = [...work];
             a[i].description = e.target.value;
+            setWork(a);
           }}
         />
       </Grid>
       <Grid item md={12} sm={12} xs={12}>
         <Button
+          color="secondary"
           onClick={() => {
             setWork(work.filter((a) => a.id !== w.id));
           }}
-          color="primary"
           variant="contained"
           size="small"
         >
           remove
           <DeleteIcon />
         </Button>
-        <Divider variant="middle" />
       </Grid>
     </Grid>
   ));
