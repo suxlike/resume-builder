@@ -2,9 +2,17 @@ import { Grid, Typography } from "@material-ui/core";
 
 const Work = ({ work }) => {
   return work.map((i) => (
-    <Grid style={{margin:20}} container spacing={1} justifyContent="space-between">
+    <Grid
+      style={{ marginLeft: 20 }}
+      container
+      spacing={1}
+      justifyContent="space-between"
+      key={i.id}
+    >
       <Grid item xs={8}>
-        <Typography color="secondary" variant="body">{i.position}</Typography>
+        <Typography color="secondary" variant="body1">
+          {i.position}
+        </Typography>
       </Grid>
       {/* <Grid item xs={1}></Grid> */}
       <Grid item xs={4}>

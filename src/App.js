@@ -15,6 +15,10 @@ import { v4 as uuidv4 } from "uuid";
 import { Paper } from "@material-ui/core";
 import Work from "./Work";
 import Edu from "./Edu";
+import SetSkills from "./SetSkills";
+import Skills from "./Skills";
+import SetInterests from "./SetInterests";
+import Interests from "./Interests";
 const useStyles = makeStyles({
   App: {
     margin: 0,
@@ -29,13 +33,22 @@ const useStyles = makeStyles({
 });
 
 function App() {
+  const [interests, setInterests] = useState([
+    { id: uuidv4(), interest: "xxx" },
+  ]);
+  const [skills, setSkills] = useState([
+    {
+      id: uuidv4(),
+      skill: "React JS",
+    },
+  ]);
   const [infos, setInfos] = useState([
     { fullName: "Umut Toker" },
     { title: "Front-End Developer" },
     { email: "utoker@gmail.com" },
-    { github: "https://github.com/suxlike" },
-    { linkedin: "nickynick" },
-    { location: "NY / LI" },
+    { github: "/suxlike" },
+    { linkedin: "/in/utoker" },
+    { location: "New York" },
     {
       description:
         "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa culpa a obcaecati. Dolore odio eligendi quidem perspiciatis perferendis. Perspiciatis earum quibusdam in unde perferendis",
@@ -129,6 +142,44 @@ function App() {
             add another education
             <AddBoxIcon />
           </Button>
+          <SetSkills skills={skills} setSkills={setSkills} />
+          <Button
+            style={{ margin: 20 }}
+            onClick={() => {
+              setSkills([
+                ...skills,
+                {
+                  id: uuidv4(),
+                  skill: "",
+                },
+              ]);
+            }}
+            color="primary"
+            variant="contained"
+            size="small"
+          >
+            add another skill
+            <AddBoxIcon />
+          </Button>
+          <SetInterests interests={interests} setInterests={setInterests} />
+          <Button
+            style={{ margin: 20 }}
+            onClick={() => {
+              setInterests([
+                ...interests,
+                {
+                  id: uuidv4(),
+                  skill: "",
+                },
+              ]);
+            }}
+            color="primary"
+            variant="contained"
+            size="small"
+          >
+            add another interest
+            <AddBoxIcon />
+          </Button>
         </Paper>
       </Grid>
       <Grid item xs={5}>
@@ -143,6 +194,14 @@ function App() {
             EDUCATION
           </Typography>
           <Edu edu={edu} />
+          <Typography color="primary" variant="h6" style={{ marginLeft: 20 }}>
+            {skills.length !== 0 && "Skills"}
+          </Typography>
+          <Skills skills={skills} setSkills={setSkills} />
+          <Typography color="primary" variant="h6" style={{ marginLeft: 20 }}>
+            {interests.length !== 0 && "Interests"}
+          </Typography>
+          <Interests interests={interests} setInterest={setInterests} />
         </Paper>
       </Grid>
     </Grid>

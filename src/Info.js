@@ -48,7 +48,7 @@ const Info = ({ infos }) => {
         </Grid>
       </Grid>
       <Divider />
-      <Typography style={{ margin: 20 }} variant="body">
+      <Typography style={{ margin: 10 }} variant="body1">
         {infos.map((info) => info.description)}
       </Typography>
     </Grid>
