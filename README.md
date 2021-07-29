@@ -2,7 +2,7 @@
 
 A React app which allows users to create their own resume.
 
-[Live](https://suxlike.github.io/resume-builder/)
+[Live Link](https://suxlike.github.io/resume-builder/)
 
 ## Built with
 
@@ -10,4 +10,4 @@ A React app which allows users to create their own resume.
 - [Material-UI](https://www.npmjs.com/package/@material-ui/core)
 - [Material-UI Icons](https://www.npmjs.com/package/@material-ui/icons)
 
-- [uuid](https://www.npmjs.com/package/uuid)
+- [UUID](https://www.npmjs.com/package/uuid)
