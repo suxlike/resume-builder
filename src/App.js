@@ -6,19 +6,15 @@ import {
   makeStyles,
   Typography,
 } from "@material-ui/core";
-import Info from "./Info";
 import SetWork from "./SetWork";
 import SetEdu from "./SetEdu";
 import SetInfo from "./SetInfo";
 import AddBoxIcon from "@material-ui/icons/AddBox";
 import { v4 as uuidv4 } from "uuid";
 import { Paper } from "@material-ui/core";
-import Work from "./Work";
-import Edu from "./Edu";
 import SetSkills from "./SetSkills";
-import Skills from "./Skills";
 import SetInterests from "./SetInterests";
-import Interests from "./Interests";
+import Print from "./Print";
 const useStyles = makeStyles({
   App: {
     margin: 0,
@@ -102,7 +98,7 @@ function App() {
 
           <SetWork work={work} setWork={setWork} />
           <Button
-            style={{ margin: 20 }}
+            style={{ margin: 16 }}
             onClick={() => {
               setWork([
                 ...work,
@@ -125,7 +121,7 @@ function App() {
           </Button>
           <SetEdu edu={edu} setEdu={setEdu} />
           <Button
-            style={{ margin: 20 }}
+            style={{ margin: 16 }}
             onClick={() => {
               setEdu([
                 ...edu,
@@ -148,7 +144,7 @@ function App() {
           </Button>
           <SetSkills skills={skills} setSkills={setSkills} />
           <Button
-            style={{ margin: 20 }}
+            style={{ margin: 16 }}
             onClick={() => {
               setSkills([
                 ...skills,
@@ -167,7 +163,7 @@ function App() {
           </Button>
           <SetInterests interests={interests} setInterests={setInterests} />
           <Button
-            style={{ margin: 20 }}
+            style={{ margin: 16 }}
             onClick={() => {
               setInterests([
                 ...interests,
@@ -187,26 +183,13 @@ function App() {
         </Paper>
       </Grid>
       <Grid item xs={5}>
-        <Paper className={classes.paper}>
-          <Info infos={infos} />
-          <Divider variant="middle" />
-          <Typography color="primary" variant="h6" style={{ marginLeft: 20 }}>
-            WORK EXPERIENCE
-          </Typography>
-          <Work work={work} />
-          <Typography color="primary" variant="h6" style={{ marginLeft: 20 }}>
-            EDUCATION
-          </Typography>
-          <Edu edu={edu} />
-          <Typography color="primary" variant="h6" style={{ marginLeft: 20 }}>
-            {skills.length !== 0 && "Skills"}
-          </Typography>
-          <Skills skills={skills} setSkills={setSkills} />
-          <Typography color="primary" variant="h6" style={{ marginLeft: 20 }}>
-            {interests.length !== 0 && "Interests"}
-          </Typography>
-          <Interests interests={interests} setInterest={setInterests} />
-        </Paper>
+        <Print
+          infos={infos}
+          work={work}
+          edu={edu}
+          skills={skills}
+          interests={interests}
+        />
       </Grid>
     </Grid>
   );

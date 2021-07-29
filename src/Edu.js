@@ -20,7 +20,7 @@ const Edu = ({ edu }) => {
         </Typography>
       </Grid>
       <Grid item xs={12}>
-        <Typography variant="body2">{i.description}</Typography>
+        <Typography gutterBottom variant="body2">{i.description}</Typography>
       </Grid>
     </Grid>
   ));

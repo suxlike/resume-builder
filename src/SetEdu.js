@@ -84,6 +84,7 @@ const SetEdu = ({ edu, setEdu }) => {
         />
       </Grid>
       <Button
+      style={{ marginLeft: 18 }}
         onClick={() => {
           setEdu(edu.filter((a) => a.id !== e.id));
         }}

@@ -85,6 +85,7 @@ const SetWork = ({ work, setWork }) => {
       </Grid>
       <Grid item md={12} sm={12} xs={12}>
         <Button
+          style={{ marginLeft: 18 }}
           color="secondary"
           onClick={() => {
             setWork(work.filter((a) => a.id !== w.id));
