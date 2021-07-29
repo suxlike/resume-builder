@@ -2,8 +2,8 @@ import { Grid, TextField } from "@material-ui/core";
 
 const SetInfo = ({ setInfos, infos }) => {
   return (
-    <Grid container spacing={1} >
-      <Grid item md={6} sm={6} xs={6} >
+    <Grid container spacing={1}>
+      <Grid item md={6} sm={6} xs={6}>
         <TextField
           color="secondary"
           value={infos[0].fullName}
@@ -37,7 +37,7 @@ const SetInfo = ({ setInfos, infos }) => {
           }}
         />
       </Grid>
-      <Grid item xs={3} >
+      <Grid item xs={3}>
         <TextField
           color="secondary"
           value={infos[2].email}
@@ -101,6 +101,24 @@ const SetInfo = ({ setInfos, infos }) => {
           onChange={(e) => {
             let i = [...infos];
             i[5] = { location: e.target.value };
+            setInfos(i);
+          }}
+        />
+      </Grid>
+      <Grid item xs={12}>
+        <TextField
+          color="secondary"
+          value={infos[6].description}
+          fullWidth
+          multiline
+          size="small"
+          margin="normal"
+          id="outlined-basic"
+          label="Description"
+          variant="outlined"
+          onChange={(e) => {
+            let i = [...infos];
+            i[6] = { location: e.target.value };
             setInfos(i);
           }}
         />

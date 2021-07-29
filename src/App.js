@@ -34,21 +34,25 @@ const useStyles = makeStyles({
 
 function App() {
   const [interests, setInterests] = useState([
-    { id: uuidv4(), interest: "xxx" },
+    { id: uuidv4(), interest: "DIY Smart Devices" },
   ]);
   const [skills, setSkills] = useState([
     {
       id: uuidv4(),
       skill: "React JS",
     },
+    {
+      id: uuidv4(),
+      skill: "Material-UI",
+    },
   ]);
   const [infos, setInfos] = useState([
     { fullName: "Umut Toker" },
     { title: "Front-End Developer" },
-    { email: "utoker@gmail.com" },
-    { github: "/suxlike" },
-    { linkedin: "/in/utoker" },
-    { location: "New York" },
+    { email: " utoker@gmail.com" },
+    { github: " /suxlike" },
+    { linkedin: " /in/utoker" },
+    { location: " New York" },
     {
       description:
         "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa culpa a obcaecati. Dolore odio eligendi quidem perspiciatis perferendis. Perspiciatis earum quibusdam in unde perferendis",
@@ -57,9 +61,9 @@ function App() {
   const [edu, setEdu] = useState([
     {
       id: uuidv4(),
-      course: "CS50: Introduction to Computer Science",
-      university: "Harvard University ",
-      startDate: "2020",
+      course: "Full Stack JavaScript",
+      university: "The Odin Project",
+      startDate: "2021",
       endDate: "Present",
       description:
         " Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus rem facilis dolorem.",
@@ -68,7 +72,7 @@ function App() {
   const [work, setWork] = useState([
     {
       id: uuidv4(),
-      company: "IBM",
+      company: "Some Company",
       position: "Junior developer",
       startDate: "2020",
       endDate: "Present",
