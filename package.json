@@ -18,7 +18,7 @@
     "uuid": "^8.3.2",
     "web-vitals": "^1.0.1"
   },
-  "homepage": "http://suxlike.github.io/resume-builder",
+  "homepage": "http://utoker.github.io/resume-builder",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
