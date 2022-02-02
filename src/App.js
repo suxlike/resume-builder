@@ -1,20 +1,20 @@
-import { useState } from "react";
+import { useState } from 'react';
 import {
   Button,
   Divider,
   Grid,
   makeStyles,
   Typography,
-} from "@material-ui/core";
-import SetWork from "./SetWork";
-import SetEdu from "./SetEdu";
-import SetInfo from "./SetInfo";
-import AddBoxIcon from "@material-ui/icons/AddBox";
-import { v4 as uuidv4 } from "uuid";
-import { Paper } from "@material-ui/core";
-import SetSkills from "./SetSkills";
-import SetInterests from "./SetInterests";
-import Print from "./Print";
+} from '@material-ui/core';
+import { v4 as uuidv4 } from 'uuid';
+import { Paper } from '@material-ui/core';
+import SetWork from './components/SetWork';
+import SetEdu from './components/SetEdu';
+import SetInfo from './components/SetInfo';
+import AddBoxIcon from '@material-ui/icons/AddBox';
+import SetSkills from './components/SetSkills';
+import SetInterests from './components/SetInterests';
+import Print from './components/Print';
 const useStyles = makeStyles({
   App: {
     margin: 0,
@@ -30,50 +30,50 @@ const useStyles = makeStyles({
 
 function App() {
   const [interests, setInterests] = useState([
-    { id: uuidv4(), interest: "DIY Smart Devices" },
+    { id: uuidv4(), interest: 'DIY Smart Devices' },
   ]);
   const [skills, setSkills] = useState([
     {
       id: uuidv4(),
-      skill: "React JS",
+      skill: 'React JS',
     },
     {
       id: uuidv4(),
-      skill: "Material-UI",
+      skill: 'Material-UI',
     },
   ]);
   const [infos, setInfos] = useState([
-    { fullName: "Umut Toker" },
-    { title: "Front-End Developer" },
-    { email: " utoker@gmail.com" },
-    { github: " /suxlike" },
-    { linkedin: " /in/utoker" },
-    { location: " New York" },
+    { fullName: 'Umut Toker' },
+    { title: 'Front-End Developer' },
+    { email: ' utoker@gmail.com' },
+    { github: ' /utoker' },
+    { linkedin: ' /in/utoker' },
+    { location: ' New York' },
     {
       description:
-        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa culpa a obcaecati. Dolore odio eligendi quidem perspiciatis perferendis. Perspiciatis earum quibusdam in unde perferendis",
+        'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa culpa a obcaecati. Dolore odio eligendi quidem perspiciatis perferendis. Perspiciatis earum quibusdam in unde perferendis',
     },
   ]);
   const [edu, setEdu] = useState([
     {
       id: uuidv4(),
-      course: "Full Stack JavaScript",
-      university: "The Odin Project",
-      startDate: "2021",
-      endDate: "Present",
+      course: 'Full Stack JavaScript',
+      university: 'The Odin Project',
+      startDate: '2021',
+      endDate: '2021',
       description:
-        " Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus rem facilis dolorem.",
+        ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus rem facilis dolorem.',
     },
   ]);
   const [work, setWork] = useState([
     {
       id: uuidv4(),
-      company: "Some Company",
-      position: "Junior developer",
-      startDate: "2020",
-      endDate: "Present",
+      company: 'Some Company',
+      position: 'Junior developer',
+      startDate: '2020',
+      endDate: 'Present',
       description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, deserunt",
+        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, deserunt',
     },
   ]);
 
@@ -91,7 +91,7 @@ function App() {
       <Grid item xs={5}>
         <Paper className={classes.paper}>
           <Typography color="primary" variant="h3" align="center">
-            {"Resume Builder "}
+            {'Resume Builder '}
           </Typography>
           <SetInfo setInfos={setInfos} infos={infos} />
           <Divider variant="middle" />
@@ -104,11 +104,11 @@ function App() {
                 ...work,
                 {
                   id: uuidv4(),
-                  company: "",
-                  position: "",
-                  startDate: "",
-                  endDate: "",
-                  description: "",
+                  company: '',
+                  position: '',
+                  startDate: '',
+                  endDate: '',
+                  description: '',
                 },
               ]);
             }}
@@ -127,11 +127,11 @@ function App() {
                 ...edu,
                 {
                   id: uuidv4(),
-                  company: "",
-                  position: "",
-                  startDate: "",
-                  endDate: "",
-                  description: "",
+                  company: '',
+                  position: '',
+                  startDate: '',
+                  endDate: '',
+                  description: '',
                 },
               ]);
             }}
@@ -150,7 +150,7 @@ function App() {
                 ...skills,
                 {
                   id: uuidv4(),
-                  skill: "",
+                  skill: '',
                 },
               ]);
             }}
@@ -169,7 +169,7 @@ function App() {
                 ...interests,
                 {
                   id: uuidv4(),
-                  skill: "",
+                  skill: '',
                 },
               ]);
             }}
