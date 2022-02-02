@@ -2,7 +2,7 @@
 
 A React app which allows users to create their own resume.
 
-[Live Link](https://suxlike.github.io/resume-builder/)
+[Live Link](https://utoker.github.io/resume-builder/)
 
 ## Built with
 
