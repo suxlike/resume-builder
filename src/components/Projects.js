@@ -1,7 +1,7 @@
 import { Grid, Typography } from '@material-ui/core';
 
-const Work = ({ work }) => {
-  return work.map((i) => (
+const Projects = ({ projects }) => {
+  return projects.map((i) => (
     <Grid
       style={{ marginLeft: 20 }}
       container
@@ -16,7 +16,7 @@ const Work = ({ work }) => {
       </Grid>
       <Grid item xs={4}>
         <Typography variant="subtitle2">
-          {i.company + ' | ' + i.startDate + ' - ' + i.endDate}
+          {i.project + ' | ' + i.startDate + ' - ' + i.endDate}
         </Typography>
       </Grid>
       <Grid item xs={12}>
@@ -28,4 +28,4 @@ const Work = ({ work }) => {
   ));
 };
 
-export default Work;
+export default Projects;

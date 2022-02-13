@@ -15,6 +15,7 @@ import AddBoxIcon from '@material-ui/icons/AddBox';
 import SetSkills from './components/SetSkills';
 import SetInterests from './components/SetInterests';
 import Print from './components/Print';
+import SetProjects from './components/SetProjects';
 const useStyles = makeStyles({
   App: {
     margin: 0,
@@ -76,6 +77,17 @@ function App() {
         'Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, deserunt',
     },
   ]);
+  const [projects, setProjects] = useState([
+    {
+      id: uuidv4(),
+      project: 'project name',
+      position: 'Junior developer',
+      startDate: '2020',
+      endDate: 'Present',
+      description:
+        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, deserunt',
+    },
+  ]);
 
   const classes = useStyles();
   return (
@@ -95,6 +107,29 @@ function App() {
           </Typography>
           <SetInfo setInfos={setInfos} infos={infos} />
           <Divider variant="middle" />
+          <SetProjects projects={projects} setProjects={setProjects} />
+          <Button
+            style={{ margin: 16 }}
+            onClick={() => {
+              setProjects([
+                ...projects,
+                {
+                  id: uuidv4(),
+                  project: '',
+                  position: '',
+                  startDate: '',
+                  endDate: '',
+                  description: '',
+                },
+              ]);
+            }}
+            color="primary"
+            variant="contained"
+            size="small"
+          >
+            add another software project
+            <AddBoxIcon />
+          </Button>
 
           <SetWork work={work} setWork={setWork} />
           <Button
@@ -185,6 +220,7 @@ function App() {
       <Grid item xs={5}>
         <Print
           infos={infos}
+          projects={projects}
           work={work}
           edu={edu}
           skills={skills}

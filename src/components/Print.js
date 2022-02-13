@@ -1,11 +1,11 @@
-import { Button } from "@material-ui/core";
-import { useRef } from "react";
-import { useReactToPrint } from "react-to-print";
-import PictureAsPdfIcon from "@material-ui/icons/PictureAsPdf";
+import { Button } from '@material-ui/core';
+import { useRef } from 'react';
+import { useReactToPrint } from 'react-to-print';
+import PictureAsPdfIcon from '@material-ui/icons/PictureAsPdf';
 
-import { ComponentToPrint } from "./ComponentToPrint";
+import { ComponentToPrint } from './ComponentToPrint';
 
-const Print = ({ infos, work, edu, skills, interests }) => {
+const Print = ({ infos, work, edu, skills, interests, projects }) => {
   const componentRef = useRef();
   const handlePrint = useReactToPrint({
     content: () => componentRef.current,
@@ -15,6 +15,7 @@ const Print = ({ infos, work, edu, skills, interests }) => {
     <div>
       <ComponentToPrint
         infos={infos}
+        projects={projects}
         work={work}
         edu={edu}
         skills={skills}
@@ -27,7 +28,7 @@ const Print = ({ infos, work, edu, skills, interests }) => {
         variant="contained"
         onClick={handlePrint}
       >
-        {"save "}
+        {'save '}
         <PictureAsPdfIcon style={{ marginLeft: 8 }} />
       </Button>
     </div>
