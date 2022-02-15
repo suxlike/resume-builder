@@ -15,7 +15,7 @@ export class ComponentToPrint extends React.PureComponent {
         <Info infos={infos} />
         <Divider variant="middle" />
         <Typography color="primary" variant="h6" style={{ marginLeft: 20 }}>
-          SOFTWARE PROJECTS
+          PROJECTS
         </Typography>
         <Projects projects={projects} />
         <Typography color="primary" variant="h6" style={{ marginLeft: 20 }}>

@@ -51,19 +51,20 @@ function App() {
     { linkedin: ' /in/utoker' },
     { location: ' New York' },
     {
-      description:
-        'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa culpa a obcaecati. Dolore odio eligendi quidem perspiciatis perferendis. Perspiciatis earum quibusdam in unde perferendis',
+      description: 'An enthusiastic junior software developer.',
     },
   ]);
   const [edu, setEdu] = useState([
     {
       id: uuidv4(),
-      course: 'Full Stack JavaScript',
-      university: 'The Odin Project',
-      startDate: '2021',
-      endDate: '2021',
-      description:
-        ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus rem facilis dolorem.',
+      course: 'Business Administration',
+      university: 'Eskisehir Osmangazi University, Turkey',
+      startDate: '2011',
+      endDate: '2018',
+      description: `Final Year Project: Performed financial research about The CBOE Volatility Index(VIX) and it is possible relations with DAX, FTSE100, IBOVESPA, SP500, and BIST 30.
+      \nPerformed marketing research project: Survey of 1746 participants and analyzed results with SPSS statistical software.
+      \n Founder member of ESOGU E-Sports Club.
+      `,
     },
   ]);
   const [work, setWork] = useState([

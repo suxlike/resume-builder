@@ -1,4 +1,4 @@
-import { Grid, TextField } from "@material-ui/core";
+import { Grid, TextField } from '@material-ui/core';
 
 const SetInfo = ({ setInfos, infos }) => {
   return (
@@ -118,7 +118,7 @@ const SetInfo = ({ setInfos, infos }) => {
           variant="outlined"
           onChange={(e) => {
             let i = [...infos];
-            i[6] = { location: e.target.value };
+            i[6] = { description: e.target.value };
             setInfos(i);
           }}
         />
